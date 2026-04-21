@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Twitch Poll Overlay Admin</title>
+  <link rel="stylesheet" href="/admin.css" />
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Twitch Poll Admin</h1>
+      <p class="subtitle">Real-time control panel for demo + live channel</p>
+    </header>
+
+    <div id="token-banner" hidden></div>
+    <div id="scope-banner" hidden></div>
+
+    <div class="grid">
+      <section class="card" aria-labelledby="widgets-title">
+        <h2 id="widgets-title">Widgets</h2>
+
+        <div id="widget-votes" class="widget-card">
+          <strong>Votes Widget</strong>
+          <p class="widget-desc">scale-style overlay</p>
+          <code class="widget-url muted" data-role="url" aria-label="Votes Widget URL"></code>
+          <div class="row">
+            <button type="button" class="secondary" data-action="copy" aria-label="Copy Votes Widget URL">Copy URL</button>
+            <button type="button" data-action="open" aria-label="Open Votes Widget in new tab">Open</button>
+          </div>
+        </div>
+
+        <div id="widget-bars" class="widget-card" style="margin-top: 16px;">
+          <strong>Bars Widget</strong>
+          <p class="widget-desc">compact bars overlay</p>
+          <code class="widget-url muted" data-role="url" aria-label="Bars Widget URL"></code>
+          <div class="row">
+            <button type="button" class="secondary" data-action="copy" aria-label="Copy Bars Widget URL">Copy URL</button>
+            <button type="button" data-action="open" aria-label="Open Bars Widget in new tab">Open</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="current-poll-card" class="card" aria-labelledby="current-poll-title">
+        <h2 id="current-poll-title">Current Poll</h2>
+        <div id="current-poll"><p class="muted">Загрузка…</p></div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="create-poll-title">
+      <h2 id="create-poll-title">Создать Twitch Poll</h2>
+      <p class="muted helper">Один опрос — оба widget'а покажут его.</p>
+      <form id="create-poll-form" novalidate>
+        <div>
+          <label for="poll-title">Title</label>
+          <input type="text" id="poll-title" name="title" maxlength="60" placeholder="Название опроса" autocomplete="off" />
+          <div class="field-error" data-error-for="title"></div>
+        </div>
+
+        <div>
+          <label>Choices</label>
+          <div id="choices-list"></div>
+          <div class="field-error" data-error-for="choices-array"></div>
+          <button type="button" id="choice-add" class="secondary">+ Add choice</button>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label for="poll-duration">Duration</label>
+          <select id="poll-duration" name="duration"></select>
+          <div class="field-error" data-error-for="duration"></div>
+        </div>
+
+        <div style="margin-top: 16px;">
+          <button type="submit" id="create-poll-submit" disabled>Create Poll</button>
+        </div>
+
+        <div id="create-poll-error" hidden></div>
+      </form>
+    </section>
+
+    <div class="grid">
+      <section class="card" aria-labelledby="demo-title">
+        <h2 id="demo-title">Demo</h2>
+        <div class="row">
+          <button type="button" id="btn-demo-start">Start Demo</button>
+          <button type="button" id="btn-demo-3" class="secondary">3-choice Demo</button>
+          <button type="button" id="btn-demo-stop" class="secondary">Stop Demo</button>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="live-title">
+        <h2 id="live-title">Live Channel</h2>
+        <div class="row inline-flex">
+          <a id="twitch-login" class="button" href="/auth/login">Twitch Login</a>
+          <span id="twitch-user" class="user-display" hidden></span>
+          <button type="button" id="twitch-logout" class="secondary" hidden>Logout</button>
+          <button type="button" id="btn-reconnect" class="secondary">Reconnect</button>
+          <button type="button" id="btn-recover" class="secondary">Recover Poll</button>
+          <button type="button" id="btn-reset" class="secondary" title="Останавливает demo и очищает текущий poll view">Reset</button>
+        </div>
+        <div class="target-channel-panel">
+          <label for="target-channel-login">Project target channel</label>
+          <div class="target-channel-row">
+            <input type="text" id="target-channel-login" placeholder="target_channel_login" autocomplete="off" spellcheck="false" />
+            <button type="button" id="target-channel-save" class="secondary">Save</button>
+          </div>
+          <p id="target-channel-current" class="muted helper">Saved target channel: not set.</p>
+          <p class="muted helper">Сохраняется локально и может быть задан через <code>TWITCH_TARGET_CHANNEL_LOGIN</code>. Не меняет Twitch account, авторизованный через OAuth.</p>
+          <div id="target-channel-error" class="field-error"></div>
+        </div>
+      </section>
+    </div>
+
+    <details class="debug">
+      <summary>Show raw snapshot JSON</summary>
+      <pre id="status">Loading...</pre>
+    </details>
+  </main>
+
+  <script src="/admin.js?v=2" type="module"></script>
+</body>
+</html>

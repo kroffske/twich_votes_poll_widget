@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+
+# Runtime state, secrets, and local outputs
+data/
+dist/
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+*.log.*
+
+# Coverage and caches
+coverage/
+.nyc_output/
+.cache/
+.eslintcache
+.npm/
+.pnpm-store/
+
+# Local tooling / agent state
+.gstack/
+.claude/
+.tasks/
+.miloc/
+CLAUDE.md
+
+# OS / editor junk
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temp files
+tmp/
+temp/
+*.tmp
+*.pid
+
+# Windows ADS metadata
+*:*Zone.Identifier

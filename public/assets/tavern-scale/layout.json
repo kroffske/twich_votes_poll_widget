@@ -1,0 +1,52 @@
+{
+  "purpose": "Runtime geometry map for the medieval/tavern scale overlay. Coordinates are based on the original 1536x1024 design canvas.",
+  "stage": { "width": 1920, "height": 1080, "background": "transparent" },
+  "assets": {
+    "base": "base.png",
+    "beam": "beam_no_vs.png",
+    "pan_back": "pan_back.png",
+    "pan_front": "pan_front.png",
+    "title_parchment": "title_parchment.png",
+    "left_banner_optional": "left_banner.png",
+    "right_banner_optional": "right_banner.png",
+    "item_coin": "item_coin.png",
+    "item_pelmen": "item_pelmen.png",
+    "item_pancake": "item_pancake.png"
+  },
+  "layers": [
+    "stage: transparent",
+    "title parchment",
+    "base",
+    "beam group",
+    "left pan back",
+    "left items",
+    "left pan front",
+    "right pan back",
+    "right items",
+    "right pan front",
+    "beam no-vs",
+    "code-rendered VS medallion",
+    "code-rendered compact stats"
+  ],
+  "geometry": {
+    "rig": { "x": 960, "top": 174, "scale": 0.68, "width": 1536, "height": 1024 },
+    "beamWrapY": -145,
+    "pivot": { "x": 768, "y": 467 },
+    "attachLeft": { "x": 175, "y": 550 },
+    "attachRight": { "x": 1360, "y": 550 },
+    "panHang": { "x": 760, "y": 55 },
+    "panScale": 0.55,
+    "itemBox": { "x": 430, "y": 718, "width": 660, "height": 184 },
+    "vs": { "x": 768, "y": 322, "size": 134 }
+  },
+  "compactLayout": {
+    "title": { "x": 960, "top": 20, "width": 690, "height": 225 },
+    "leftStats": { "x": 284, "top": 782, "width": 320, "height": 96 },
+    "rightStats": { "x": 1316, "top": 782, "width": 320, "height": 96 }
+  },
+  "animation": {
+    "maxTiltDeg": 11,
+    "durationMs": 950,
+    "items": "DOM/CSS scatter stack inside itemBox; front pan image overlays the heap"
+  }
+}

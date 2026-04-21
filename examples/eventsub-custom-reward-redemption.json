@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "message_type": "notification",
+    "subscription_type": "channel.channel_points_custom_reward_redemption.add",
+    "subscription_version": "1"
+  },
+  "payload": {
+    "event": {
+      "id": "17fa2df1-ad76-4804-bfa5-a40ef63efe63",
+      "broadcaster_user_id": "1337",
+      "broadcaster_user_login": "cool_user",
+      "broadcaster_user_name": "Cool_User",
+      "user_id": "9001",
+      "user_login": "viewer_login",
+      "user_name": "ViewerName",
+      "user_input": "",
+      "status": "unfulfilled",
+      "reward": {
+        "id": "reward-id-left",
+        "title": "Team Left weight",
+        "cost": 500,
+        "prompt": "Add weight to Team Left"
+      },
+      "redeemed_at": "2026-04-19T12:01:00.000000000Z"
+    }
+  }
+}

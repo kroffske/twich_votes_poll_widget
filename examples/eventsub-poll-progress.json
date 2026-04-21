@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "message_type": "notification",
+    "subscription_type": "channel.poll.progress",
+    "subscription_version": "1"
+  },
+  "payload": {
+    "event": {
+      "id": "1243456",
+      "broadcaster_user_id": "1337",
+      "broadcaster_user_login": "cool_user",
+      "broadcaster_user_name": "Cool_User",
+      "title": "Кто победит?",
+      "choices": [
+        { "id": "123", "title": "Team Left", "bits_votes": 0, "channel_points_votes": 7, "votes": 32 },
+        { "id": "124", "title": "Team Right", "bits_votes": 0, "channel_points_votes": 11, "votes": 39 }
+      ],
+      "bits_voting": { "is_enabled": false, "amount_per_vote": 0 },
+      "channel_points_voting": { "is_enabled": true, "amount_per_vote": 250 },
+      "started_at": "2026-04-19T12:00:00.000000000Z",
+      "ends_at": "2026-04-19T12:05:00.000000000Z"
+    }
+  }
+}

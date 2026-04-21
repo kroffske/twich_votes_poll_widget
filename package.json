@@ -1,0 +1,44 @@
+{
+  "name": "twitch-poll-scale-overlay",
+  "version": "0.3.0",
+  "description": "OBS Browser Source overlay for Twitch Polls and Channel Points with animated bars and scale-style visualization.",
+  "type": "module",
+  "main": "src/server.js",
+  "bin": {
+    "twitch-poll-scale-overlay": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js run",
+    "demo": "node bin/cli.js run --demo --open",
+    "init": "node bin/cli.js init",
+    "doctor": "node bin/cli.js doctor",
+    "urls": "node bin/cli.js urls",
+    "install:app": "node bin/cli.js install",
+    "serve": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test test/*.js",
+    "lint:check": "node --check src/*.js && node --check public/*.js && node --check bin/*.js && node --check scripts/*.js",
+    "pack:local": "node scripts/pack-local.js",
+    "npx:demo": "node scripts/run-npx-local.js --demo --open",
+    "npx:run": "node scripts/run-npx-local.js"
+  },
+  "files": [
+    "bin/",
+    "docs/",
+    "examples/",
+    "public/",
+    "scripts/",
+    "src/",
+    ".env.example",
+    "README.md",
+    "package.json"
+  ],
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.19.2",
+    "ws": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
