@@ -8,7 +8,13 @@ Twitch EventSub WebSocket → Node.js Backend → WebSocket → OBS Browser Sour
 
 ## Screenshot
 
-> 📸 **Add scale visualization screenshot here** (`public/assets/scale-demo.png`)
+![Scale visualization example](/.gstack/qa-reports/screenshots/scale-demo.png)
+
+**Features shown:**
+- Animated balance scale showing real-time vote distribution
+- Question banner with metadata
+- Vote counts and percentages for each option
+- Transparency support for OBS overlay
 
 ## Quick Start
 
