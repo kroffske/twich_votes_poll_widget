@@ -8,7 +8,7 @@ Twitch EventSub WebSocket → Node.js Backend → WebSocket → OBS Browser Sour
 
 ## Скриншот
 
-![Пример визуализации весов](/.gstack/qa-reports/screenshots/scale-demo.png)
+![Пример визуализации весов](docs/images/scale-demo.png)
 
 **Показанные возможности:**
 - Анимированные весы показывают распределение голосов в реальном времени
